@@ -1,26 +1,22 @@
-# Project Title: *Minecraft Farmpedia*
+# Project Title: *Function/Index*
 
 ## Project Overview
-*Create an index for Minecraft Farms where you can search for a specific item you want to have farmed and in which Minecraft version it should work.
- There will be step by step guides with pictures provided by Laurenz (for example blueprints)*
+*Create an index for progrmming functions where you can search for a specific function you want to know more about.
+ There will be examples and parameters listed*
 
 ## Objectives
-- A website to help new people who want to build farms and it will also assist ourselves in building such farms!
+- A website to help programmers like us learn more about different functions in C# and C!
 
 ## How did we get to this?
 
-- It happens pretty often that you want to create a farm in servers, which is mostly complicated to create
-so we had to search it up on YouTube which is really time consuming. So a simple solution would be an overview of farms all in one website.
-
+- If you dont know how to exactly use a function and the IDE isnt really helpful. You probably go to the Internet where all Information is from random people arguing and most of the time not very helpful.
 ## Features
 The website will include the following features:
 
 1. **Homepage**
-   - A list of all farms. You can filter of desired items and versions.
-
+   - A collections of all functions. You can sort by programming language and via a search bar.
 2. **Navigation Menu**
-   - Filtering and reset button of the filters and all Farms currently known
-
+   - A search bar and a filter option
 
 
 ## Technologies Used
@@ -32,6 +28,3 @@ The website will include the following features:
 
 ## Submission Instructions
 - On our github account
-
-## Resources
-- *Minecraft footage pictures provided by Laurenz*
