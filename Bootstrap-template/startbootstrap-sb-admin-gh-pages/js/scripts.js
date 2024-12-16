@@ -24,3 +24,24 @@ window.addEventListener('DOMContentLoaded', event => {
     }
 
 });
+const themeToggle = document.getElementById("theme-toggle");
+const body = document.body;
+
+// Check local storage for saved theme preference
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme) {
+    body.setAttribute("data-theme", savedTheme);
+    themeToggle.textContent =
+        savedTheme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode";
+}
+
+themeToggle.addEventListener("click", () => {
+    const currentTheme = body.getAttribute("data-theme");
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+    body.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
+
+    themeToggle.textContent =
+        newTheme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode";
+});
