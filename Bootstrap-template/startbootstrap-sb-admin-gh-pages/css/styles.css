@@ -4466,6 +4466,31 @@ textarea.form-control-lg {
   .card-group > .card:not(:first-child) .card-footer {
     border-bottom-left-radius: 0;
   }
+  /* Hover effects for each card's background color */
+  .card.bg-primary:hover {
+    background-color: #0056b3; /* Darker blue shade */
+    transform: translateY(-5px); /* Slight lift effect */
+  }
+
+  .card.bg-success:hover {
+    background-color: #218838; /* Darker green shade */
+    transform: translateY(-5px); /* Slight lift effect */
+  }
+
+  .card.bg-warning:hover {
+    background-color: #e0a800; /* Darker yellow shade */
+    transform: translateY(-5px); /* Slight lift effect */
+  }
+
+  .card.bg-danger:hover {
+    background-color: #c82333; /* Darker red shade */
+    transform: translateY(-5px); /* Slight lift effect */
+  }
+
+  .card.bg-dark:hover {
+    background-color: #23272b; /* Darker dark shade */
+    transform: translateY(-5px); /* Slight lift effect */
+  }
 }
 
 .accordion {
