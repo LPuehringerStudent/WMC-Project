@@ -8357,7 +8357,8 @@ textarea.form-control-lg {
 
 .text-white {
   --bs-text-opacity: 1;
-  color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
+  /* color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;*/
+  color: rgba(0,0,0, var(--bs-text-opacity)) !important;
 }
 
 .text-body {
@@ -8403,7 +8404,8 @@ textarea.form-control-lg {
 
 .bg-primary {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+  /*background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;*/
+  background-color: rgba(237, 231, 225, var(--bs-bg-opacity)) !important;
 }
 
 .bg-secondary {
