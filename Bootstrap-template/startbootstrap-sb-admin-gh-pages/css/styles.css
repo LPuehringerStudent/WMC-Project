@@ -4429,6 +4429,74 @@ textarea.form-control-lg {
 .card-group > .card {
   margin-bottom: var(--bs-card-group-margin);
 }
+/* Hover effects for each card's background color */
+.card.bg-primary:hover {
+  background-color: #0056b3; /* Darker blue shade */
+  transform: translateY(-5px); /* Slight lift effect */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds shadow */
+}
+
+.card.bg-success:hover {
+  background-color: #218838; /* Darker green shade */
+  transform: translateY(-5px); /* Slight lift effect */
+}
+
+.card.bg-warning:hover {
+  background-color: #e0a800; /* Darker yellow shade */
+  transform: translateY(-5px); /* Slight lift effect */
+}
+
+.card.bg-danger:hover {
+  background-color: #c82333; /* Darker red shade */
+  transform: translateY(-5px); /* Slight lift effect */
+}
+
+.card.bg-dark:hover {
+  background-color: #23272b; /* Darker dark shade */
+  transform: translateY(-5px); /* Slight lift effect */
+}
+
+/* Now move these to the main section of the card styles */
+.card.bg-primary {
+  background-color: #007bff; /* Primary background color */
+}
+
+.card.bg-primary:hover {
+  background-color: #0056b3; /* Darker shade for hover */
+}
+
+.card.bg-success {
+  background-color: #28a745; /* Success background color */
+}
+
+.card.bg-success:hover {
+  background-color: #218838; /* Darker shade for hover */
+}
+
+.card.bg-warning {
+  background-color: #ffc107; /* Warning background color */
+}
+
+.card.bg-warning:hover {
+  background-color: #e0a800; /* Darker shade for hover */
+}
+
+.card.bg-danger {
+  background-color: #dc3545; /* Danger background color */
+}
+
+.card.bg-danger:hover {
+  background-color: #c82333; /* Darker shade for hover */
+}
+
+.card.bg-dark {
+  background-color: #343a40; /* Dark background color */
+}
+
+.card.bg-dark:hover {
+  background-color: #1d2124; /* Darker shade for hover */
+}
+
 @media (min-width: 576px) {
   .card-group {
     display: flex;
@@ -4491,6 +4559,52 @@ textarea.form-control-lg {
     background-color: #23272b; /* Darker dark shade */
     transform: translateY(-5px); /* Slight lift effect */
   }
+
+  .card.bg-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds shadow */
+  }
+  .card.bg-primary {
+    background-color: #007bff; /* Primary background color */
+  }
+
+  .card.bg-primary:hover {
+    background-color: #0056b3; /* Darker shade for hover */
+  }
+
+  .card.bg-success {
+    background-color: #28a745; /* Success background color */
+  }
+
+  .card.bg-success:hover {
+    background-color: #218838; /* Darker shade for hover */
+  }
+
+  .card.bg-warning {
+    background-color: #ffc107; /* Warning background color */
+  }
+
+  .card.bg-warning:hover {
+    background-color: #e0a800; /* Darker shade for hover */
+  }
+
+  .card.bg-danger {
+    background-color: #dc3545; /* Danger background color */
+  }
+
+  .card.bg-danger:hover {
+    background-color: #c82333; /* Darker shade for hover */
+  }
+
+  .card.bg-dark {
+    background-color: #343a40; /* Dark background color */
+  }
+
+  .card.bg-dark:hover {
+    background-color: #1d2124; /* Darker shade for hover */
+  }
+
 }
 
 .accordion {
