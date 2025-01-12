@@ -3,9 +3,7 @@
     * Copyright 2013-2023 Start Bootstrap
     * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-sb-admin/blob/master/LICENSE)
     */
-    // 
 // Scripts
-// 
 
 window.addEventListener('DOMContentLoaded', event => {
 
@@ -24,6 +22,8 @@ window.addEventListener('DOMContentLoaded', event => {
     }
 
 });
+
+// Theme toggle logic
 const themeToggle = document.getElementById("theme-toggle");
 const body = document.body;
 
@@ -33,6 +33,23 @@ if (savedTheme) {
     body.setAttribute("data-theme", savedTheme);
     themeToggle.textContent =
         savedTheme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode";
+    updateThemeToggleStyles(savedTheme); // Apply styles based on the saved theme
+} else {
+    // Default to light mode if no saved theme
+    updateThemeToggleStyles("light");
+}
+
+// Update button styles dynamically based on the theme
+function updateThemeToggleStyles(theme) {
+    if (theme === "dark") {
+        themeToggle.style.color = "var(--bs-light)";
+        themeToggle.style.backgroundColor = "var(--bs-dark)";
+        themeToggle.style.border = "1px solid var(--bs-light)";
+    } else {
+        themeToggle.style.color = "var(--bs-dark)";
+        themeToggle.style.backgroundColor = "var(--bs-light)";
+        themeToggle.style.border = "1px solid var(--bs-dark)";
+    }
 }
 
 themeToggle.addEventListener("click", () => {
@@ -44,4 +61,6 @@ themeToggle.addEventListener("click", () => {
 
     themeToggle.textContent =
         newTheme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode";
+
+    updateThemeToggleStyles(newTheme); // Update button styles when the theme is toggled
 });

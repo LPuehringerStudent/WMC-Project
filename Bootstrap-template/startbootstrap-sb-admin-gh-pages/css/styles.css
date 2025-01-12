@@ -69,7 +69,10 @@
 /* Theme Toggle Button */
 .theme-toggle {
   padding: 10px 20px;
-  background-color: var(--bs-gray);<!DOCTYPE html>
+  background-color: var(--bs-gray);
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
@@ -217,7 +220,7 @@ Grade Selection
 </html>
 
 </body>
-</html>
+</html>;
 
   color: var(--bs-black);
   border: dot-dash;
@@ -227,10 +230,21 @@ Grade Selection
   transition: background-color 0.3s, color 0.3s;
 }
 
-.theme-toggle:hover {
-  background-color: #333;
-  color: #fff;
+/* Default Light Mode */
+body[data-theme="light"] #theme-toggle {
+  color: var(--bs-dark); /* Dark text for light mode */
+  background-color: var(--bs-light);
+  border: 1px solid var(--bs-dark); /* Optional border */
 }
+
+/* Dark Mode */
+body[data-theme="dark"] #theme-toggle {
+  color: var(--bs-light); /* Light text for dark mode */
+  background-color: var(--bs-dark);
+  border: 1px solid var(--bs-light); /* Optional border */
+}
+
+
 
 /* Default (Light Mode) */
 :root {
