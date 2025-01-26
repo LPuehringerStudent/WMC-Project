@@ -64,3 +64,6 @@ themeToggle.addEventListener("click", () => {
 
     updateThemeToggleStyles(newTheme); // Update button styles when the theme is toggled
 });
+
+
+
