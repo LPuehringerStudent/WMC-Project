@@ -11509,3 +11509,18 @@ body {
   font-family: "JetBrains Mono", monospace;
 }
 
+.code-block {
+  background-color: #1e1e1e;
+  color: #dcdcdc;
+  padding: 15px;
+  border-radius: 5px;
+  font-family: Consolas, "Courier New", monospace;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+.code-block code {
+  display: block;
+  font-size: 14px;
+  line-height: 1.5;
+}
