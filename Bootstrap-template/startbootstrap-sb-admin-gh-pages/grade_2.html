@@ -103,23 +103,102 @@
                                 <li><a href="#Exception handling">Exception handling</a></li>
                             </ul>
                         </nav>
-                        <p>Interesting stuff.</p>
+                        <section id="revision">
+                            <h1>Revision</h1>
+                            <header>
+                                <h1>Programming Revision</h1>
+                                <p>A brief revision of basic programming concepts we covered last year.</p>
+                            </header>
+
+                            <section>
+                                <h2>1. Arrays</h2>
+                                <p>Arrays are used to store multiple values in a single variable. They are zero-indexed, meaning the first element is at index 0.</p>
+                                <pre><code>// Example in C#
+int[] numbers = { 1, 2, 3, 4, 5 };
+Console.WriteLine(numbers[0]); // Output: 1
+</code></pre>
+                                <p>You can loop through arrays using a <code>for</code> loop or a <code>foreach</code> loop:</p>
+                                <pre><code>// Using a for loop
+for (int i = 0; i < numbers.Length; i++) {
+    Console.WriteLine(numbers[i]);
+}
+
+// Using a foreach loop
+foreach (int number in numbers) {
+    Console.WriteLine(number);
+}
+</code></pre>
+                            </section>
+
+                            <section>
+                                <h2>2. Conditional Statements</h2>
+                                <p>Conditional statements like <code>if</code>, <code>else if</code>, and <code>else</code> allow you to execute code based on conditions.</p>
+                                <pre><code>// Example in C#
+int age = 18;
+if (age >= 18) {
+    Console.WriteLine("You are an adult.");
+} else {
+    Console.WriteLine("You are a minor.");
+}
+</code></pre>
+                            </section>
+
+                            <section>
+                                <h2>3. Loops</h2>
+                                <p>Loops allow you to repeat a block of code. The most common types of loops are <code>for</code>, <code>while</code>, and <code>do-while</code>.</p>
+                                <pre><code>// For loop
+for (int i = 0; i < 5; i++) {
+    Console.WriteLine(i);
+}
+
+// While loop
+int j = 0;
+while (j < 5) {
+    Console.WriteLine(j);
+    j++;
+}
+
+// Do-while loop
+int k = 0;
+do {
+    Console.WriteLine(k);
+    k++;
+} while (k < 5);
+</code></pre>
+                            </section>
+
+                            <section>
+                                <h2>4. Functions/Methods</h2>
+                                <p>Functions (or methods) allow you to encapsulate reusable blocks of code. They can take parameters and return values.</p>
+                                <pre><code>// Example of a method in C#
+int Add(int a, int b) {
+    return a + b;
+}
+
+// Calling the method
+int result = Add(3, 4);
+Console.WriteLine(result); // Output: 7
+</code></pre>
+                            </section>
+                        </section>
                     </section>
+                    <hr style="width:50%;text-align:left;margin-left:0">
 
                     <section id="maths">
                         <h1>Maths</h1>
                         <p>BlaBlabla.</p>
                     </section>
-
+                    <hr style="width:50%;text-align:left;margin-left:0">
                     <section id="business">
                         <h1>Business and Accounting</h1>
                         <p>Interesting text.</p>
                     </section>
-
+                    <hr style="width:50%;text-align:left;margin-left:0">
                     <section id="geography">
                         <h1>Geography</h1>
                         <p>hello. </p>
                     </section>
+                    <hr style="width:50%;text-align:left;margin-left:0">
                 </div>
                 </p>
             </div>
