@@ -143,16 +143,19 @@
                             <li><strong>Float:</strong> Represents decimal numbers (e.g., 3.14, -0.5).</li>
                             <li><strong>String:</strong> Represents a sequence of characters (e.g., "Hello World").</li>
                         </ul>
-                        <p>Example in C:</p>
-                        <pre><code>#include <stdio.h>
+                        <p>Example in C#:</p>
+                        <pre><code>using System;
 
-int main() {
-    int age = 25;
-    float temperature = 36.5;
-    char grade = 'A';
+class Program
+{
+    static void Main()
+    {
+        int age = 25;
+        float temperature = 36.5f;
+        char grade = 'A';
 
-    printf("Age: %d, Temperature: %.2f, Grade: %c\n", age, temperature, grade);
-    return 0;
+        Console.WriteLine($"Age: {age}, Temperature: {temperature}, Grade: {grade}");
+    }
 }</code></pre>
                     </section>
 
@@ -160,14 +163,16 @@ int main() {
                     <section id="I/O">
                         <h2>Input/Output</h2>
                         <p>Input/Output (I/O) refers to the process of receiving input from the user and displaying output to the user. Here's an example:</p>
-                        <pre><code>#include <stdio.h>
+                        <pre><code>using System;
 
-int main() {
-    int num;
-    printf("Enter a number: ");
-    scanf("%d", &num);
-    printf("You entered: %d\n", num);
-    return 0;
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter a number: ");
+        int num = int.Parse(Console.ReadLine());
+        Console.WriteLine($"You entered: {num}");
+    }
 }</code></pre>
                     </section>
 
@@ -175,15 +180,18 @@ int main() {
                     <section id="math">
                         <h2>Mathematics</h2>
                         <p>Mathematics is integral to programming. We often perform calculations, such as addition, subtraction, multiplication, and division:</p>
-                        <pre><code>#include <stdio.h>
+                        <pre><code>using System;
 
-int main() {
-    int a = 10, b = 5;
-    printf("Addition: %d + %d = %d\n", a, b, a + b);
-    printf("Subtraction: %d - %d = %d\n", a, b, a - b);
-    printf("Multiplication: %d * %d = %d\n", a, b, a * b);
-    printf("Division: %d / %d = %d\n", a, b, a / b);
-    return 0;
+class Program
+{
+    static void Main()
+    {
+        int a = 10, b = 5;
+        Console.WriteLine($"Addition: {a} + {b} = {a + b}");
+        Console.WriteLine($"Subtraction: {a} - {b} = {a - b}");
+        Console.WriteLine($"Multiplication: {a} * {b} = {a * b}");
+        Console.WriteLine($"Division: {a} / {b} = {a / b}");
+    }
 }</code></pre>
                     </section>
 
@@ -191,13 +199,16 @@ int main() {
                     <section id="arrays">
                         <h2>Arrays</h2>
                         <p>Arrays are used to store multiple values of the same type in a single variable. For example:</p>
-                        <pre><code>#include <stdio.h>
+                        <pre><code>using System;
 
-int main() {
-    int numbers[] = {1, 2, 3, 4, 5};
-    printf("First number: %d\n", numbers[0]);
-    printf("Second number: %d\n", numbers[1]);
-    return 0;
+class Program
+{
+    static void Main()
+    {
+        int[] numbers = {1, 2, 3, 4, 5};
+        Console.WriteLine($"First number: {numbers[0]}");
+        Console.WriteLine($"Second number: {numbers[1]}");
+    }
 }</code></pre>
                     </section>
 
@@ -205,32 +216,39 @@ int main() {
                     <section id="enums">
                         <h2>Enums</h2>
                         <p>Enumerated types (enums) are used to define variables that can hold a set of predefined constants:</p>
-                        <pre><code>#include <stdio.h>
+                        <pre><code>using System;
 
-enum week {Mon, Tue, Wed, Thu, Fri, Sat, Sun};
+enum Week {Mon, Tue, Wed, Thu, Fri, Sat, Sun}
 
-int main() {
-    enum week today = Wed;
-    printf("Today is day number %d of the week\n", today);
-    return 0;
+class Program
+{
+    static void Main()
+    {
+        Week today = Week.Wed;
+        Console.WriteLine($"Today is day number {(int)today} of the week");
+    }
 }</code></pre>
                     </section>
 
                     <!-- Records Section -->
                     <section id="records">
                         <h2>Records</h2>
-                        <p>Records (also known as structures in C) allow you to group related data of different types:</p>
-                        <pre><code>#include <stdio.h>
+                        <p>Records (also known as structures in C#) allow you to group related data of different types:</p>
+                        <pre><code>using System;
 
-struct student {
-    char name[50];
-    int age;
-};
+public struct Student
+{
+    public string Name;
+    public int Age;
+}
 
-int main() {
-    struct student s1 = {"Alice", 20};
-    printf("Name: %s, Age: %d\n", s1.name, s1.age);
-    return 0;
+class Program
+{
+    static void Main()
+    {
+        Student s1 = new Student { Name = "Alice", Age = 20 };
+        Console.WriteLine($"Name: {s1.Name}, Age: {s1.Age}");
+    }
 }</code></pre>
                     </section>
                 </div>
