@@ -70,6 +70,7 @@
         <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
             <div class="sb-sidenav-menu">
                 <div class="nav">
+                    <div class="sb-sidenav-menu-heading">Navigation</div>
                     <a class="nav-link" href="#oop-basics">
                         <div class="sb-nav-link-icon"><i class="fas fa-code"></i></div>
                         OOP Basics
@@ -131,6 +132,41 @@
                         <li><strong>Extensibility:</strong> Add new features without modifying existing code.</li>
                     </ul>
 
+                    <h3>General Class Example</h3>
+                    <p>Here's a general example of a class that represents a bank account with methods to deposit, withdraw, and check the balance.</p>
+                    <h4>Example in C#:</h4>
+                    <pre><code>public class BankAccount {
+    private string _owner;
+    private decimal _balance;
+
+    // Constructor
+    public BankAccount(string owner, decimal initialBalance) {
+        _owner = owner;
+        _balance = initialBalance;
+    }
+
+    // Deposit money
+    public void Deposit(decimal amount) {
+        _balance += amount;
+    }
+
+    // Withdraw money
+    public void Withdraw(decimal amount) {
+        _balance -= amount;
+    }
+
+    // Display account info
+    public void DisplayInfo() {
+        Console.WriteLine($"Owner: {_owner}, Balance: {_balance:C}");
+    }
+}
+
+// Usage
+BankAccount account = new BankAccount("Alice", 1000);
+account.Deposit(200);
+account.Withdraw(150);
+account.DisplayInfo(); // Output: Owner: Alice, Balance: $1,050.00
+</code></pre>
                     <h3>Constructors</h3>
                     <p>A constructor is a special method in a class that initializes objects of that class. It has the same name as the class and does not have a return type. Constructors are used to set the initial state of an object.</p>
                     <h4>Example in C#:</h4>
@@ -210,19 +246,46 @@ list.Add(2);
 list.Add(3);
 list.PrintAll();</code></pre>
 
-                    <h3>Dictionary</h3>
-                    <p>A dictionary stores key-value pairs, allowing for fast lookups. Keys must be unique, but values can repeat.</p>
-                    <h4>Example in C#:</h4>
-                    <pre><code>var dictionary = new Dictionary<string, int>();
+                    <h3>Dictionary (Manual Implementation)</h3>
+                    <p>A dictionary can be implemented manually using a class that stores key-value pairs. The class includes methods for adding, retrieving, and updating values.</p>
+                    <h4>Manual Implementation in C#:</h4>
+                    <pre><code>public class ManualDictionary {
+    private List<string> _keys = new List<string>();
+    private List<int> _values = new List<int>();
 
+    // Add a key-value pair
+    public void Add(string key, int value) {
+        _keys.Add(key);
+        _values.Add(value);
+    }
+
+    // Update a value
+    public void Update(string key, int newValue) {
+        int index = _keys.IndexOf(key);
+        _values[index] = newValue;
+    }
+
+    // Retrieve a value
+    public int Get(string key) {
+        int index = _keys.IndexOf(key);
+        return _values[index];
+    }
+
+    // Display all key-value pairs
+    public void DisplayAll() {
+        for (int i = 0; i < _keys.Count; i++) {
+            Console.WriteLine($"Key: {_keys[i]}, Value: {_values[i]}");
+        }
+    }
+}
+
+// Usage
+ManualDictionary dictionary = new ManualDictionary();
 dictionary.Add("Alice", 30);
 dictionary.Add("Bob", 25);
-
-dictionary["Alice"] = 31; // Update Alice's age
-
-foreach (var entry in dictionary) {
-    Console.WriteLine($"Key: {entry.Key}, Value: {entry.Value}");
-}</code></pre>
+dictionary.Update("Alice", 31);
+dictionary.DisplayAll(); // Output: Key: Alice, Value: 31 | Key: Bob, Value: 25
+</code></pre>
                 </section>
 
                 <!-- Generics Section -->
@@ -262,16 +325,10 @@ Console.WriteLine(calculator.Add(5, 10)); // Output: 15</code></pre>
     }
 
     public void Add(T item) {
-        if (_count == _items.Length) {
-            throw new InvalidOperationException("List is full");
-        }
         _items[_count++] = item;
     }
 
     public T Get(int index) {
-        if (index < 0 || index >= _count) {
-            throw new IndexOutOfRangeException();
-        }
         return _items[index];
     }
 }
