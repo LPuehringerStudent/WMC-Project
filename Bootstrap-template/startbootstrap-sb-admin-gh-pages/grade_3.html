@@ -10,6 +10,20 @@
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        #editable {
+            border: 1px solid #ccc;
+            padding: 10px;
+            min-height: 200px;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
 </head>
 
 <body class="sb-nav-fixed">
@@ -78,43 +92,11 @@
     </div>
     <div id="layoutSidenav_content">
         <main>
-            <div class="container-fluid px-4">
-                <h1 class = "text-style"> Third Grade: </h1>
+            <div id="editable" contenteditable="true">Loading content...</div>
+            <button id="save">Save</button>
 
-                <p>
-                    <h3> Choose one of these options: </h3>
-                <nav>
-                    <ul>
-                        <li><a href="#programming">Stuff</a></li>
-                        <li><a href="#maths">Stuff</a></li>
-                        <li><a href="#business">Stuff</a></li>
-                        <li><a href="#geography">Stuff</a></li>
-                    </ul>
-                </nav>
-
-                <div style="margin-left: 200px;">
-                    <section id="programming">
-                        <h1>Programming</h1>
-                        <p>Learn how to write efficient and clean code in various programming languages.</p>
-                    </section>
-
-                    <section id="maths">
-                        <h1>Maths</h1>
-                        <p>Understand the principles of the wonders of math.</p>
-                    </section>
-
-                    <section id="business">
-                        <h1>Business and Accounting</h1>
-                        <p>Explore a new world of business and accounting.</p>
-                    </section>
-
-                    <section id="geography">
-                        <h1>Geography</h1>
-                        <p>Learn how the world is built and what it consists of. </p>
-                    </section>
-                </div>
-                </p>
-            </div>
+            <!-- Link to the external JavaScript file -->
+            <script src="script.js"></script>
         </main>
     </div>
 </div>
