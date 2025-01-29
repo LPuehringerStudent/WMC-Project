@@ -64,6 +64,22 @@ themeToggle.addEventListener("click", () => {
 
     updateThemeToggleStyles(newTheme); // Update button styles when the theme is toggled
 });
+document.querySelectorAll('.tl-item').forEach(item => {
+    const video = item.querySelector('.tl-video');
+
+    item.addEventListener('mouseenter', () => {
+        if (video) {
+            video.play();
+        }
+    });
+
+    item.addEventListener('mouseleave', () => {
+        if (video) {
+            video.pause();
+            video.currentTime = 0; // Reset video when hover ends
+        }
+    });
+});
 
 
 

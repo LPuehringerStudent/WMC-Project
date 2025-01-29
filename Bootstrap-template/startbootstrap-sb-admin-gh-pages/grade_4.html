@@ -78,43 +78,69 @@
     </div>
     <div id="layoutSidenav_content">
         <main>
-            <div class="container-fluid px-4">
-                <h1 class = "text-style"> Fourth Grade: </h1>
+            <section id="timeline">
 
-                <p>
-                    <h3> Choose one of these options: </h3>
-                <nav>
-                    <ul>
-                        <li><a href="#programming">Stuff</a></li>
-                        <li><a href="#maths">Stuff</a></li>
-                        <li><a href="#business">Stuff</a></li>
-                        <li><a href="#geography">Stuff</a></li>
-                    </ul>
-                </nav>
-
-                <div style="margin-left: 200px;">
-                    <section id="programming">
-                        <h1>Programming</h1>
-                        <p>Learn how to write efficient and clean code in various programming languages.</p>
-                    </section>
-
-                    <section id="maths">
-                        <h1>Maths</h1>
-                        <p>Understand the principles of the wonders of math.</p>
-                    </section>
-
-                    <section id="business">
-                        <h1>Business and Accounting</h1>
-                        <p>Explore a new world of business and accounting.</p>
-                    </section>
-
-                    <section id="geography">
-                        <h1>Geography</h1>
-                        <p>Learn how the world is built and what it consists of. </p>
-                    </section>
+                <div class="tl-item" onclick="window.location.href='index.html';" style="cursor: pointer;">
+                    <div class="tl-bg">
+                        <video class="tl-video" loop muted>
+                            <source src="car_2.0.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="tl-year">
+                        <p class="f2 heading--sanSerif">Grade 1</p>
+                    </div>
+                    <div class="tl-content">
+                        <h1>C# Basics</h1>
+                        <p>Learn The basics of programming</p>
+                    </div>
                 </div>
-                </p>
-            </div>
+
+                <div class="tl-item" onclick="window.location.href='Level2.html';" style="cursor: pointer;">
+                    <div class="tl-bg">
+                        <video class="tl-video" loop muted>
+                            <source src="video2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="tl-year">
+                        <p class="f2 heading--sanSerif">Level 2</p>
+                    </div>
+                    <div class="tl-content">
+                        <h1 class="f3 text--accent ttu">Partial Automation</h1>
+                        <p>Example: Tesla Autopilot (2.0), Lane Keeping Assist (LKA) systems. The vehicle can simultaneously manage steering and acceleration/braking. The driver must remain ready to take control at any moment.</p>
+                    </div>
+                </div>
+
+                <div class="tl-item" onclick="window.location.href='Level3.html';" style="cursor: pointer;">
+                    <div class="tl-bg">
+                        <video class="tl-video" loop muted>
+                            <source src="video3.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="tl-year">
+                        <p class="f2 heading--sanSerif">Level 3</p>
+                    </div>
+                    <div class="tl-content">
+                        <h1 class="f3 text--accent ttu">Conditional Automation</h1>
+                        <p>Example: Audi A8 with Traffic Jam Pilot, Tesla Autopilot (3.0). The system can take full control in specific conditions (e.g., in traffic jams). The driver can be distracted but must be ready to intervene if prompted by the system.</p>
+                    </div>
+                </div>
+
+                <div class="tl-item" onclick="window.location.href='fsd.html';" style="cursor: pointer;">
+                    <div class="tl-bg">
+                        <video class="tl-video" loop muted>
+                            <source src="video4.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="tl-year">
+                        <p class="f2 heading--sanSerif">FSD</p>
+                    </div>
+                    <div class="tl-content">
+                        <h1 class="f3 text--accent ttu">High Automation</h1>
+                        <p>Example: Robotaxi prototypes (Waymo, Yandex, advanced Tesla FSD Beta versions). The vehicle can fully drive itself in specific geofenced areas and conditions without driver intervention. The driver can completely relax, but the system is limited to predefined scenarios.</p>
+                    </div>
+                </div>
+
+            </section>
         </main>
     </div>
 </div>
