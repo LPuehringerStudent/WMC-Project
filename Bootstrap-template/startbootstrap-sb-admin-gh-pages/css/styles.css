@@ -11530,7 +11530,7 @@ body {
   width: 25%;
   height: 70vh;
   min-height: 600px;
-  color: #244024;
+  color: #a5a5a5;
   overflow: hidden;
   transition: width 0.5s ease;
 
@@ -11620,10 +11620,6 @@ body {
   height: 100%;
   top: 0;
   left: 0;
-  background-size: cover;
-  background-position: center center;
-  transition: filter 0.5s ease;
-  filter: grayscale(100%);
   overflow: hidden;
 }
 
@@ -11631,13 +11627,21 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: none;
+  filter: grayscale(100%); /* Video starts in grayscale */
+  transition: filter 0.5s ease;
 }
 
 .tl-item:hover .tl-bg video {
-  display: block;
+  filter: grayscale(0);
 }
 
-.tl-item:hover .tl-bg {
-  filter: grayscale(0);
+#timeline {
+  display: flex;
+  background-color: #031625;
+
+  &:hover {
+    .tl-item {
+      width: 23.3333%;
+    }
+  }
 }

@@ -80,6 +80,27 @@ document.querySelectorAll('.tl-item').forEach(item => {
         }
     });
 });
+document.querySelectorAll('.tl-item').forEach(item => {
+    const video = item.querySelector('.tl-video');
+
+    // Ensure video starts paused
+    if (video) {
+        video.pause();
+    }
+
+    item.addEventListener('mouseenter', () => {
+        if (video) {
+            video.play(); // Play video on hover
+        }
+    });
+
+    item.addEventListener('mouseleave', () => {
+        if (video) {
+            video.pause(); // Pause video when not hovered
+            video.currentTime = 0; // Reset video so it starts from the beginning next time
+        }
+    });
+});
 
 
 
