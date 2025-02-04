@@ -103,4 +103,23 @@ document.querySelectorAll('.tl-item').forEach(item => {
 });
 
 
+    document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("searchInput");
+    const cards = document.querySelectorAll(".card");
+
+    searchInput.addEventListener("keyup", function () {
+    const searchText = searchInput.value.toLowerCase().trim();
+
+    cards.forEach(card => {
+    const text = card.textContent.toLowerCase();
+    if (text.includes(searchText)) {
+    card.style.display = "block"; // Show matching elements
+} else {
+    card.style.display = "none"; // Hide non-matching elements
+}
+});
+});
+});
+
+
 
