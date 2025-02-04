@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="HTL Leonding Guide" />
+    <meta name="author" content="HTL Leonding" />
+    <title>Dashboard - HTL Leonding Guide</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <link href="../Bootstrap-template/startbootstrap-sb-admin-gh-pages/css/styles.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
+    <style>
+        pre {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+        .container-fluid {
+            margin-top: 20px;
+        }
+        h2 {
+            margin-top: 30px;
+            color: #2c3e50;
+        }
+        section {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body class="sb-nav-fixed">
+<!-- Navigation bar -->
+<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+    <a class="navbar-brand ps-3" href="../Bootstrap-template/startbootstrap-sb-admin-gh-pages/index.html">HTL Leonding Guide</a>
+    <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+    <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+        <div class="input-group">
+            <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+            <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+        </div>
+    </form>
+    <button id="theme-toggle" class="btn btn-outline-light ms-2">Switch to Dark Mode</button>
+    <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#!">Settings</a></li>
+                <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#!">Logout</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+    <a class="navbar-brand ps-3" href="../Bootstrap-template/startbootstrap-sb-admin-gh-pages/index.html">HTL Leonding Guide</a>
+    <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
+</nav>
+
+<div id="layoutSidenav">
+    <div id="layoutSidenav_nav">
+        <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+            <div class="sb-sidenav-menu">
+                <div class="nav">
+                    <div class="sb-sidenav-menu-heading">Navigation</div>
+                    <a class="nav-link" href="#oop-basics">
+                        <div class="sb-nav-link-icon"><i class="fas fa-code"></i></div>
+                        OOP Basics
+                    </a>
+                    <a class="nav-link" href="#data-structures">
+                        <div class="sb-nav-link-icon"><i class="fas fa-database"></i></div>
+                        Data Structures
+                    </a>
+                    <a class="nav-link" href="#generics">
+                        <div class="sb-nav-link-icon"><i class="fas fa-layer-group"></i></div>
+                        Generics
+                    </a>
+                    <div class="sb-sidenav-menu-heading">Core</div>
+                    <a class="nav-link" href="../Bootstrap-template/startbootstrap-sb-admin-gh-pages/index.html">
+                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                        Grade Selection
+                    </a>
+                    <a class="nav-link" href="grade_1.html">
+                        <div class="sb-nav-link-icon"><i class="fa-solid fa-list"></i></div>
+                        First Grade
+                    </a>
+                    <a class="nav-link" href="grade_2.html">
+                        <div class="sb-nav-link-icon"><i class="fa-solid fa-list"></i></div>
+                        Second Grade
+                    </a>
+                    <a class="nav-link" href="grade_3.html">
+                        <div class="sb-nav-link-icon"><i class="fa-solid fa-list"></i></div>
+                        Third Grade
+                    </a>
+                    <a class="nav-link" href="grade_4.html">
+                        <div class="sb-nav-link-icon"><i class="fa-solid fa-list"></i></div>
+                        Fourth Grade
+                    </a>
+                    <a class="nav-link" href="grade_5.html">
+                        <div class="sb-nav-link-icon"><i class="fa-solid fa-list"></i></div>
+                        Fifth Grade
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <h1 class="mt-4">Second Grade</h1>
+
+                <!-- OOP Basics Section -->
+                <section id="oop-basics">
+                    <h2>OOP Basics</h2>
+                    <h3>Introduction to OOP</h3>
+                    <p>Object-Oriented Programming (OOP) organizes code into objects that represent real-world entities. Each object has two aspects: <strong>state</strong> (data) and <strong>behavior</strong> (methods).</p>
+
+                    <h3>Goals of OOP</h3>
+                    <ul>
+                        <li><strong>Reusability:</strong> Create reusable components.</li>
+                        <li><strong>Single Responsibility:</strong> Each object is responsible for one task.</li>
+                        <li><strong>Encapsulation:</strong> Protect data and logic inside objects.</li>
+                        <li><strong>Extensibility:</strong> Add new features without modifying existing code.</li>
+                    </ul>
+
+                    <h3>General Class Example</h3>
+                    <p>Here's a general example of a class that represents a bank account with methods to deposit, withdraw, and check the balance.</p>
+                    <h4>Example in C#:</h4>
+                    <pre><code>public class BankAccount {
+    private string _owner;
+    private decimal _balance;
+
+    // Constructor
+    public BankAccount(string owner, decimal initialBalance) {
+        _owner = owner;
+        _balance = initialBalance;
+    }
+
+    // Deposit money
+    public void Deposit(decimal amount) {
+        _balance += amount;
+    }
+
+    // Withdraw money
+    public void Withdraw(decimal amount) {
+        _balance -= amount;
+    }
+
+    // Display account info
+    public void DisplayInfo() {
+        Console.WriteLine($"Owner: {_owner}, Balance: {_balance:C}");
+    }
+}
+
+// Usage
+BankAccount account = new BankAccount("Alice", 1000);
+account.Deposit(200);
+account.Withdraw(150);
+account.DisplayInfo(); // Output: Owner: Alice, Balance: $1,050.00
+</code></pre>
+                    <h3>Constructors</h3>
+                    <p>A constructor is a special method in a class that initializes objects of that class. It has the same name as the class and does not have a return type. Constructors are used to set the initial state of an object.</p>
+                    <h4>Example in C#:</h4>
+                    <pre><code>public class Human {
+    private string _name;
+    private int _age;
+
+    // Constructor
+    public Human(string name, int age) {
+        _name = name;
+        _age = age;
+    }
+
+    public void DisplayInfo() {
+        Console.WriteLine($"Name: {_name}, Age: {_age}");
+    }
+}
+
+// Usage
+Human person = new Human("Alice", 30);
+person.DisplayInfo(); // Output: Name: Alice, Age: 30</code></pre>
+                </section>
+
+                <!-- Data Structures Section -->
+                <section id="data-structures">
+                    <h2>Data Structures</h2>
+                    <h3>Dynamic Data Structures</h3>
+                    <p>Dynamic data structures adjust memory allocation at runtime, offering flexibilit over fixed-size arrays. Examples include:</p>
+                    <ul>
+                        <li><strong>List:</strong> A resizable array.</li>
+                        <li><strong>Stack:</strong> Last In First Out (LIFO).</li>
+                        <li><strong>Queue:</strong> First In First Out (FIFO).</li>
+                        <li><strong>Set:</strong> Stores unique elements.</li>
+                        <li><strong>Map:</strong> Stores key-value pairs.</li>
+                    </ul>
+
+                    <h3>Self-Implemented List with Nodes</h3>
+                    <p>A self-implemented list can use nodes to store data. Each node links to the next node, forming a chain.</p>
+                    <pre><code>public class Node {
+    public int Data { get; set; }
+    public Node? Next { get; set; }
+
+    public Node(int data) {
+        Data = data;
+        Next = null;
+    }
+}
+
+public class LinkedList {
+    private Node? _head;
+
+    public void Add(int data) {
+        if (_head == null) {
+            _head = new Node(data);
+        } else {
+            Node current = _head;
+            while (current.Next != null) {
+                current = current.Next;
+            }
+            current.Next = new Node(data);
+        }
+    }
+
+    public void PrintAll() {
+        Node? current = _head;
+        while (current != null) {
+            Console.WriteLine(current.Data);
+            current = current.Next;
+        }
+    }
+}
+
+// Usage
+LinkedList list = new LinkedList();
+list.Add(1);
+list.Add(2);
+list.Add(3);
+list.PrintAll();</code></pre>
+
+                    <h3>Dictionary (Manual Implementation)</h3>
+                    <p>A dictionary can be implemented manually using a class that stores key-value pairs. The class includes methods for adding, retrieving, and updating values.</p>
+                    <h4>Manual Implementation in C#:</h4>
+                    <pre><code>public class ManualDictionary {
+    private List<string> _keys = new List<string>();
+    private List<int> _values = new List<int>();
+
+    // Add a key-value pair
+    public void Add(string key, int value) {
+        _keys.Add(key);
+        _values.Add(value);
+    }
+
+    // Update a value
+    public void Update(string key, int newValue) {
+        int index = _keys.IndexOf(key);
+        _values[index] = newValue;
+    }
+
+    // Retrieve a value
+    public int Get(string key) {
+        int index = _keys.IndexOf(key);
+        return _values[index];
+    }
+
+    // Display all key-value pairs
+    public void DisplayAll() {
+        for (int i = 0; i < _keys.Count; i++) {
+            Console.WriteLine($"Key: {_keys[i]}, Value: {_values[i]}");
+        }
+    }
+}
+
+// Usage
+ManualDictionary dictionary = new ManualDictionary();
+dictionary.Add("Alice", 30);
+dictionary.Add("Bob", 25);
+dictionary.Update("Alice", 31);
+dictionary.DisplayAll(); // Output: Key: Alice, Value: 31 | Key: Bob, Value: 25
+</code></pre>
+                </section>
+
+                <!-- Generics Section -->
+                <section id="generics">
+                    <h2>Generics</h2>
+                    <h3>Introduction to Generics</h3>
+                    <p>Generics allow you to define classes and methods with a placeholder for data types. This reduces code duplication and improves type safety.</p>
+
+                    <h3>Using Generics with Constraints</h3>
+                    <p>Generics can include constraints to restrict the type of data they accept. For example, you can specify that a generic type must implement a certain interface or inherit from a base class.</p>
+                    <h4>Example in C#:</h4>
+                    <pre><code>public class GenericCalculator<T> where T : struct {
+    public T Add(T a, T b) {
+        return (dynamic)a + (dynamic)b;
+    }
+}
+
+// Usage
+var calculator = new GenericCalculator<int>();
+Console.WriteLine(calculator.Add(5, 10)); // Output: 15</code></pre>
+
+                    <h3>Benefits of Generics</h3>
+                    <ul>
+                        <li>Reusability with type parameters.</li>
+                        <li>Type safety at compile time.</li>
+                        <li>Performance improvements with value types.</li>
+                    </ul>
+
+                    <h3>Example: Generic List</h3>
+                    <pre><code>public class CustomList<T> {
+    private T[] _items;
+    private int _count;
+
+    public CustomList(int capacity) {
+        _items = new T[capacity];
+        _count = 0;
+    }
+
+    public void Add(T item) {
+        _items[_count++] = item;
+    }
+
+    public T Get(int index) {
+        return _items[index];
+    }
+}
+
+// Usage
+CustomList<string> myList = new CustomList<string>(5);
+myList.Add("Hello");
+myList.Add("World");
+Console.WriteLine(myList.Get(1)); // Output: World</code></pre>
+                </section>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Dark Mode Toggle
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    themeToggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('bg-dark');
+        document.body.classList.toggle('text-light');
+    });
+</script>
