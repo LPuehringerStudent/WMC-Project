@@ -120,8 +120,8 @@ document.querySelectorAll('.tl-item').forEach(item => {
 }
 });
 });
-        searchInput.addEventListener("keyup", function () {
-            const searchText = searchInput.value.toLowerCase().trim();
+        sections.addEventListener("keyup", function () {
+            const searchText = sections.value.toLowerCase().trim();
 
             cards.forEach(card => {
                 const text = card.textContent.toLowerCase();
