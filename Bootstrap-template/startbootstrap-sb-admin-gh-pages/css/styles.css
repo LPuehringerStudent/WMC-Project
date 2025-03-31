@@ -11524,6 +11524,13 @@ body {
   font-size: 14px;
   line-height: 1.5;
 }
+
+
+
+
+
+
+
 /* Timeline container: stack items vertically, center them, and enlarge the blue background area */
 #timeline {
   display: flex;
@@ -11546,7 +11553,9 @@ body {
   color: #9db4dd;
   overflow: hidden;
   transition: transform 0.5s ease;
-}
+
+    font-size: 18px;
+  }
 
 /* Optional hover effect */
 .tl-item:hover {
@@ -11581,17 +11590,19 @@ body {
   z-index: 1;
   text-align: center;
   margin: 0 1em;
-  top: 50%;
+  top: 65%;
   opacity: 0;
-  transform: translateY(15px);
+  transform: translateY(25px);
   transition: all 0.75s ease 0.5s;
 }
-
+.tl-content h1 {
+  font-size: 30px; /* Adjust this value as needed */
+}
 /* Show content on hover */
 .tl-item:hover .tl-content {
   opacity: 1;
   transform: translateY(0);
-}
+  }
 
 /* Year styling in timeline item */
 .tl-year {
