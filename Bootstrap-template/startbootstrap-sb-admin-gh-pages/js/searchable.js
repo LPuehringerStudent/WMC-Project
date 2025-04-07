@@ -56,3 +56,10 @@ searchInput.addEventListener('keydown', (e) => {
         scrollToFirstMatch(query);
     }
 });
+
+// Clear the search input when the "X" button is clicked
+const clearSearchBtn = document.getElementById('clearSearch');
+clearSearchBtn.addEventListener('click', () => {
+    searchInput.value = ''; // Clear the input field
+    highlightFullWordsContaining(''); // Clear the highlighted words
+});
