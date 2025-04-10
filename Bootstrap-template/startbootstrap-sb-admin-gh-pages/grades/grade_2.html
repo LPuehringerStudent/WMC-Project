@@ -33,6 +33,27 @@
         section {
             margin-bottom: 30px;
         }
+        nav ul {
+            padding-left: 0;
+        }
+        nav ul li {
+            list-style-type: none;
+            margin-bottom: 10px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .sb-nav-link-icon {
+            color: #fff;
+        }
+        mark {
+            background-color: yellow;
+        }
     </style>
 </head>
 
@@ -59,10 +80,6 @@
             </ul>
         </li>
     </ul>
-</nav>
-<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-    <a class="navbar-brand ps-3" href="../html/index.html">HTL Leonding Guide</a>
-    <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
 </nav>
 
 <div id="layoutSidenav">
@@ -167,6 +184,7 @@ account.Deposit(200);
 account.Withdraw(150);
 account.DisplayInfo(); // Output: Owner: Alice, Balance: $1,050.00
 </code></pre>
+
                     <h3>Constructors</h3>
                     <p>A constructor is a special method in a class that initializes objects of that class. It has the same name as the class and does not have a return type. Constructors are used to set the initial state of an object.</p>
                     <h4>Example in C#:</h4>
@@ -194,7 +212,7 @@ person.DisplayInfo(); // Output: Name: Alice, Age: 30</code></pre>
                 <section id="data-structures">
                     <h2>Data Structures</h2>
                     <h3>Dynamic Data Structures</h3>
-                    <p>Dynamic data structures adjust memory allocation at runtime, offering flexibilit over fixed-size arrays. Examples include:</p>
+                    <p>Dynamic data structures adjust memory allocation at runtime, offering flexibility over fixed-size arrays. Examples include:</p>
                     <ul>
                         <li><strong>List:</strong> A resizable array.</li>
                         <li><strong>Stack:</strong> Last In First Out (LIFO).</li>
@@ -249,32 +267,27 @@ list.PrintAll();</code></pre>
                     <h3>Dictionary (Manual Implementation)</h3>
                     <p>A dictionary can be implemented manually using a class that stores key-value pairs. The class includes methods for adding, retrieving, and updating values.</p>
                     <h4>Manual Implementation in C#:</h4>
-                    <pre><code>
-                        public class ManualDictionary {
-    private List<string> _keys = new List<string>();
-    private List<int> _values = new List<int>();
+                    <pre><code>public class ManualDictionary {
+    private List&lt;string&gt; _keys = new List&lt;string&gt;();
+    private List&lt;int&gt; _values = new List&lt;int&gt;();
 
-    // Add a key-value pair
     public void Add(string key, int value) {
         _keys.Add(key);
         _values.Add(value);
     }
 
-    // Update a value
     public void Update(string key, int newValue) {
         int index = _keys.IndexOf(key);
         _values[index] = newValue;
     }
 
-    // Retrieve a value
     public int Get(string key) {
         int index = _keys.IndexOf(key);
         return _values[index];
     }
 
-    // Display all key-value pairs
     public void DisplayAll() {
-        for (int i = 0; i < _keys.Count; i++) {
+        for (int i = 0; i &lt; _keys.Count; i++) {
             Console.WriteLine($"Key: {_keys[i]}, Value: {_values[i]}");
         }
     }
@@ -285,8 +298,7 @@ ManualDictionary dictionary = new ManualDictionary();
 dictionary.Add("Alice", 30);
 dictionary.Add("Bob", 25);
 dictionary.Update("Alice", 31);
-dictionary.DisplayAll(); // Output: Key: Alice, Value: 31 | Key: Bob, Value: 25
-</code></pre>
+dictionary.DisplayAll();</code></pre>
                 </section>
 
                 <!-- Generics Section -->
@@ -298,14 +310,14 @@ dictionary.DisplayAll(); // Output: Key: Alice, Value: 31 | Key: Bob, Value: 25
                     <h3>Using Generics with Constraints</h3>
                     <p>Generics can include constraints to restrict the type of data they accept. For example, you can specify that a generic type must implement a certain interface or inherit from a base class.</p>
                     <h4>Example in C#:</h4>
-                    <pre><code>public class GenericCalculator<T> where T : struct {
+                    <pre><code>public class GenericCalculator&lt;T&gt; where T : struct {
     public T Add(T a, T b) {
         return (dynamic)a + (dynamic)b;
     }
 }
 
 // Usage
-var calculator = new GenericCalculator<int>();
+var calculator = new GenericCalculator&lt;int&gt;();
 Console.WriteLine(calculator.Add(5, 10)); // Output: 15</code></pre>
 
                     <h3>Benefits of Generics</h3>
@@ -316,7 +328,7 @@ Console.WriteLine(calculator.Add(5, 10)); // Output: 15</code></pre>
                     </ul>
 
                     <h3>Example: Generic List</h3>
-                    <pre><code>public class CustomList<T> {
+                    <pre><code>public class CustomList&lt;T&gt; {
     private T[] _items;
     private int _count;
 
@@ -335,7 +347,7 @@ Console.WriteLine(calculator.Add(5, 10)); // Output: 15</code></pre>
 }
 
 // Usage
-CustomList<string> myList = new CustomList<string>(5);
+CustomList&lt;string&gt; myList = new CustomList&lt;string&gt;(5);
 myList.Add("Hello");
 myList.Add("World");
 Console.WriteLine(myList.Get(1)); // Output: World</code></pre>
@@ -355,3 +367,5 @@ Console.WriteLine(myList.Get(1)); // Output: World</code></pre>
     });
 </script>
 <script src="../js/searchable.js"></script>
+</body>
+</html>
