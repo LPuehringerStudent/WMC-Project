@@ -109,54 +109,160 @@
             <div id="mainContent" class="container-fluid px-4">
                 <h1 class="text-style">First Grade:</h1>
 
-                <!-- All the content is here -->
+                <!-- Data Types -->
                 <section id="datatypes">
                     <h2>Data Types</h2>
-                    <p>In programming, data types specify what kind of data can be stored in a variable...</p>
+                    <p>Data types determine the kind of data a variable can hold. Common types include:</p>
+                    <ul>
+                        <li><code>int</code>: Whole numbers (e.g., 1, -5, 42)</li>
+                        <li><code>decimal</code>: Decimal numbers (e.g., 3.14, 0.5)</li>
+                        <li><code>char</code>: A single character (e.g., 'A', 'z')</li>
+                        <li><code>bool</code>: Boolean values (true or false)</li>
+                    </ul>
                     <pre><code>int age = 25;
 float temp = 36.5f;
-char grade = 'A';</code></pre>
+char grade = 'A';
+bool isStudent = true;</code></pre>
+
+                    <h3>Exercise</h3>
+                    <p>Try declaring variables of each type and print their values using <code>Console.WriteLine()</code>.</p>
                 </section>
 
+                <hr>
+
+                <!-- Input/Output -->
                 <section id="I/O">
                     <h2>Input/Output</h2>
-                    <p>Input/Output (I/O) is the process of reading input and displaying output...</p>
-                    <pre><code>Console.Write("Enter a number: ");
-int num = int.Parse(Console.ReadLine());</code></pre>
+                    <p>Input/Output (I/O) allows you to interact with the user. You can get input using <code>Console.ReadLine()</code> and display output using <code>Console.WriteLine()</code>.</p>
+                    <pre><code>Console.Write("Enter your name: ");
+string name = Console.ReadLine();
+Console.WriteLine("Hello, " + name + "!");</code></pre>
+
+                    <h3>Exercise</h3>
+                    <p>Ask the user to enter two numbers and print their sum.</p>
+                    <pre><code>Console.Write("Enter first number: ");
+int a = int.Parse(Console.ReadLine());
+Console.Write("Enter second number: ");
+int b = int.Parse(Console.ReadLine());
+Console.WriteLine("Sum: " + (a + b));</code></pre>
                 </section>
 
+                <hr>
+
+                <!-- Mathematics -->
                 <section id="math">
                     <h2>Mathematics</h2>
-                    <p>Math in programming includes addition, subtraction, etc...</p>
-                    <pre><code>int a = 10, b = 5;
-Console.WriteLine(a + b);</code></pre>
+                    <p>You can perform basic math operations using <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, and <code>%</code> (modulo).</p>
+                    <pre><code>int x = 12;
+int y = 5;
+
+Console.WriteLine(x + y); // 17
+Console.WriteLine(x % y); // 2</code></pre>
+
+                    <h3>Exercise</h3>
+                    <p>Create two variables and display the result of all five operations.</p>
+                    <pre><code>Console.WriteLine("Add: " + (x + y));
+Console.WriteLine("Subtract: " + (x - y));
+Console.WriteLine("Multiply: " + (x * y));
+Console.WriteLine("Divide: " + (x / y));
+Console.WriteLine("Modulo: " + (x % y));</code></pre>
                 </section>
 
+                <hr>
+
+                <!-- Arrays -->
                 <section id="arrays">
                     <h2>Arrays</h2>
-                    <p>Arrays store multiple values in a single variable...</p>
-                    <pre><code>int[] numbers = {1, 2, 3};</code></pre>
+                    <p>Arrays are used to store multiple values of the same data type in one variable. Indexes start at 0.</p>
+
+                    <h3>Example: Basic Array</h3>
+                    <pre><code>int[] numbers = {10, 20, 30, 40};
+Console.WriteLine(numbers[1]); // 20</code></pre>
+
+                    <h3>Exercise</h3>
+                    <p>Print the first and last values of an array. Then change one value and print the array using a loop.</p>
+
+                    <h3>Looping Through Arrays</h3>
+                    <pre><code>foreach (int n in numbers)
+{
+    Console.WriteLine(n);
+}</code></pre>
+
+                    <h3>2D Arrays</h3>
+                    <p>2D arrays look like tables. You access values using two indices: row and column.</p>
+                    <pre><code>int[,] grid = {
+    {1, 2, 3},
+    {4, 5, 6}
+};
+
+Console.WriteLine(grid[1, 2]); // Outputs 6</code></pre>
+
+                    <h3>Array of Arrays (Jagged Arrays)</h3>
+                    <p>Jagged arrays are arrays of arrays. Each row can be a different length.</p>
+                    <pre><code>int[][] jagged = new int[2][];
+jagged[0] = new int[] {1, 2, 3};
+jagged[1] = new int[] {4};
+
+Console.WriteLine(jagged[0][2]); // 3</code></pre>
+
+                    <h3>Exercise</h3>
+                    <p>Write nested loops to print a jagged array.</p>
+                    <pre><code>for (int i = 0; i &lt; jagged.Length; i++)
+{
+    for (int j = 0; j &lt; jagged[i].Length; j++)
+    {
+        Console.Write(jagged[i][j] + " ");
+    }
+    Console.WriteLine();
+}</code></pre>
                 </section>
 
+                <hr>
+
+                <!-- Enums -->
                 <section id="enums">
                     <h2>Enums</h2>
-                    <p>Enums define a set of named constants...</p>
-                    <pre><code>enum Week {Mon, Tue, Wed};</code></pre>
+                    <p>Enums are a way to name a set of related constant values. They make code more readable.</p>
+                    <pre><code>enum Weekday { Monday, Tuesday, Wednesday, Thursday, Friday };
+
+Weekday today = Weekday.Tuesday;
+Console.WriteLine(today); // Tuesday</code></pre>
+
+                    <h3>Exercise</h3>
+                    <p>Try printing each day of the week using a loop.</p>
+                    <pre><code>foreach (Weekday day in Enum.GetValues(typeof(Weekday)))
+{
+    Console.WriteLine(day);
+}</code></pre>
                 </section>
 
+                <hr>
+
+                <!-- Records -->
                 <section id="records">
                     <h2>Records</h2>
-                    <p>Records are groupings of related variables...</p>
-                    <pre><code>struct Student {
-string Name;
-int Age;
-}</code></pre>
+                    <p>Records group related variables into one unit. They are useful for representing objects like students, books, etc.</p>
+
+                    <h3>Example: Struct</h3>
+                    <pre><code>Record Student
+{
+    public string Name;
+    public int Age;
+}
+
+Student s;
+s.Name = "Lisa";
+s.Age = 17;
+
+Console.WriteLine(s.Name + " is " + s.Age + " years old.");</code></pre>
+
+                    <h3>Exercise</h3>
+                    <p>Create a struct for a book with title and author, then print it.</p>
                 </section>
             </div>
         </main>
     </div>
 </div>
-
 <script src="../js/searchable.js"></script>
 </body>
 </html>
