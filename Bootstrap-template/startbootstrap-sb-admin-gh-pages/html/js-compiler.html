@@ -3,30 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live JavaScript Compiler</title>
-    <link rel="stylesheet" href="style.css">
+    <title>JavaScript Interpreter</title>
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
 <div class="container">
-    <aside class="sidebar">
-        <h2>Menu</h2>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </aside>
-    <main class="content">
-        <h1>Live JavaScript Compiler</h1>
-        <div class="editor">
-                <textarea id="codeInput" rows="15" placeholder="Write your code here...">
-// Example:
-// console.log('Hello, World!');
-                </textarea>
-            <button id="runCode">Run</button>
-        </div>
-        <pre id="output" class="output"></pre>
-    </main>
+    <h1>JavaScript Interpreter</h1>
+    <textarea id="js-input" placeholder="Write your JavaScript code here..."></textarea>
+    <div class="buttons">
+        <button id="run-btn">Run</button>
+        <button id="clear-btn">Clear</button>
+    </div>
+    <pre id="output"></pre>
 </div>
 <script src="../js/js-compiler.js"></script>
 </body>

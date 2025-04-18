@@ -1,15 +1,18 @@
-document.getElementById('runCode').addEventListener('click', () => {
-    const codeInput = document.getElementById('codeInput').value;
-    const outputElement = document.getElementById('output');
+document.getElementById("run-btn").addEventListener("click", () => {
+    const input = document.getElementById("js-input").value;
+    const output = document.getElementById("output");
 
     try {
-        // Clear previous output
-        outputElement.textContent = '';
-
-        // Execute the code
-        const result = new Function(codeInput)();
-        outputElement.textContent = `Output:\n${result}`;
+        const result = eval(input);
+        output.textContent = result === undefined ? "Code executed successfully." : result;
+        output.classList.remove("error");
     } catch (error) {
-        outputElement.textContent = `Error:\n${error.message}`;
+        output.textContent = `Error: ${error.message}`;
+        output.classList.add("error");
     }
+});
+
+document.getElementById("clear-btn").addEventListener("click", () => {
+    document.getElementById("js-input").value = "";
+    document.getElementById("output").textContent = "";
 });
