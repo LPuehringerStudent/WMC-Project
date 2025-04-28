@@ -1,12 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector("form");
+    const form = document.getElementById("registrationForm");
     const firstName = document.getElementById("inputFirstName");
     const lastName = document.getElementById("inputLastName");
     const email = document.getElementById("inputEmail");
     const password = document.getElementById("inputPassword");
     const passwordConfirm = document.getElementById("inputPasswordConfirm");
 
-    form.addEventListener("submit", function (event) {
+    form.addEventListener("submit", async function (event) {
+        event.preventDefault();
         let isValid = true;
 
         // Clear previous errors
@@ -42,9 +43,31 @@ document.addEventListener("DOMContentLoaded", function () {
             isValid = false;
         }
 
-        // Prevent form submission if validation fails
-        if (!isValid) {
-            event.preventDefault();
+        if (isValid) {
+            try {
+                const response = await fetch('http://localhost:3000/users', {   // <-- CHANGED
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        firstName: firstName.value.trim(),
+                        lastName: lastName.value.trim(),
+                        email: email.value.trim(),
+                        password: password.value
+                    }),
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to register user');
+                }
+
+                alert('Registration successful!');
+                window.location.href = "login.html";
+            } catch (error) {
+                showError(email, error.message || "Failed to create account. Please try again.");
+                console.error("Registration error:", error);
+            }
         }
     });
 
