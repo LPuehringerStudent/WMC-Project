@@ -5,61 +5,68 @@ themeToggleBtn.addEventListener('click', () => {
     document.body.classList.toggle('text-light');
 });
 
+// Fuzzy Search
 const searchInput = document.getElementById('searchInput');
 const mainContent = document.getElementById('mainContent');
 const originalContent = mainContent.innerHTML;
+const clearSearchBtn = document.getElementById('clearSearch');
 
-// Escape regex characters
-function escapeRegExp(string) {
-    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+function fuzzyMatch(text, query) {
+    text = text.toLowerCase();
+    query = query.toLowerCase();
+    if (text.includes(query)) return true;
+    if (query.length <= 2) return false;
+
+    for (let i = 0; i < query.length; i++) {
+        const modifiedQuery = query.slice(0, i) + query.slice(i + 1);
+        if (text.includes(modifiedQuery)) return true;
+    }
+    return false;
 }
 
-function highlightFullWordsContaining(query) {
+function highlightFuzzy(query) {
     if (!query) {
         mainContent.innerHTML = originalContent;
         return;
     }
 
-    const wordRegex = new RegExp(`\\b\\w*${escapeRegExp(query)}\\w*\\b`, 'gi');
     let newContent = originalContent;
 
     newContent = newContent.replace(/<pre><code>[\s\S]*?<\/code><\/pre>|<[^>]+>|([^<]+)/g, (match, textOnly) => {
         if (!textOnly) return match;
-        return textOnly.replace(wordRegex, (word) => {
-            return `<mark>${word}</mark>`;
+        return textOnly.replace(/\w+/g, (word) => {
+            if (fuzzyMatch(word, query)) {
+                return `<mark>${word}</mark>`;
+            }
+            return word;
         });
     });
 
     mainContent.innerHTML = newContent;
 }
 
-function scrollToFirstMatch(query) {
+function scrollToFirstFuzzyMatch(query) {
     if (!query) return;
     const marks = mainContent.querySelectorAll('mark');
-    for (const mark of marks) {
-        if (mark.textContent.toLowerCase() === query.toLowerCase()) {
-            mark.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            break;
-        }
+    if (marks.length > 0) {
+        marks[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 }
 
 searchInput.addEventListener('input', () => {
     const query = searchInput.value.trim();
-    highlightFullWordsContaining(query);
+    highlightFuzzy(query);
 });
 
 searchInput.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
-        e.preventDefault(); // prevent form submit behavior
+        e.preventDefault();
         const query = searchInput.value.trim();
-        scrollToFirstMatch(query);
+        scrollToFirstFuzzyMatch(query);
     }
 });
 
-// Clear the search input when the "X" button is clicked
-const clearSearchBtn = document.getElementById('clearSearch');
 clearSearchBtn.addEventListener('click', () => {
-    searchInput.value = ''; // Clear the input field
-    highlightFullWordsContaining(''); // Clear the highlighted words
+    searchInput.value = '';
+    highlightFuzzy('');
 });
