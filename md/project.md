@@ -31,3 +31,10 @@ The website will include the following features:
 
 ## Resources
 - *For now just our experience but as said people can log in and change info, so also their experience*
+
+# ---IMPORTANT---
+Use:
+```bash
+json-server --watch Bootstrap-template/startbootstrap-sb-admin-gh-pages/DB/db.json --port 3000
+```
+In the project dir in order to correctly start up the database!
