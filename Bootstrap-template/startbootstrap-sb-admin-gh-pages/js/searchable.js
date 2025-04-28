@@ -55,6 +55,7 @@ function scrollToFirstFuzzyMatch(query) {
 
 searchInput.addEventListener('input', () => {
     const query = searchInput.value.trim();
+    //comment
     highlightFuzzy(query);
 });
 
