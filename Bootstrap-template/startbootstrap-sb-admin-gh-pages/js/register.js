@@ -1,12 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("registrationForm");
+    const form = document.getElementById("registrationForm"); // Make sure this matches the HTML id
     const username = document.getElementById("inputUsername");
     const email = document.getElementById("inputEmail");
     const password = document.getElementById("inputPassword");
     const passwordConfirm = document.getElementById("inputConfirmPassword");
 
+    // Ensure the form submit event is properly handled
     form.addEventListener("submit", async function (event) {
-        event.preventDefault();
+        event.preventDefault(); // Prevent the form from reloading the page
+
         let isValid = true;
 
         // Clear previous errors
@@ -54,8 +56,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     throw new Error('Failed to register user');
                 }
 
-                alert('Registration successful!');
-                window.location.href = "login.html";
+                // Successful registration, redirect to index.html
+                window.location.href = "index.html";
+
             } catch (error) {
                 showError(email, error.message || "Failed to create account. Please try again.");
                 console.error("Registration error:", error);
