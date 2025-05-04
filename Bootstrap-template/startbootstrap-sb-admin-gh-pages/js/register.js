@@ -1,10 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("registrationForm");
-    const firstName = document.getElementById("inputFirstName");
-    const lastName = document.getElementById("inputLastName");
+    const username = document.getElementById("inputUsername");
     const email = document.getElementById("inputEmail");
     const password = document.getElementById("inputPassword");
-    const passwordConfirm = document.getElementById("inputPasswordConfirm");
+    const passwordConfirm = document.getElementById("inputConfirmPassword");
 
     form.addEventListener("submit", async function (event) {
         event.preventDefault();
@@ -13,15 +12,9 @@ document.addEventListener("DOMContentLoaded", function () {
         // Clear previous errors
         clearErrors();
 
-        // Validate First Name
-        if (firstName.value.trim() === "") {
-            showError(firstName, "First name is required.");
-            isValid = false;
-        }
-
-        // Validate Last Name
-        if (lastName.value.trim() === "") {
-            showError(lastName, "Last name is required.");
+        // Validate Username
+        if (username.value.trim() === "") {
+            showError(username, "Username is required.");
             isValid = false;
         }
 
@@ -45,14 +38,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (isValid) {
             try {
-                const response = await fetch('http://localhost:3000/users', {   // <-- CHANGED
+                const response = await fetch('http://localhost:3000/users', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        firstName: firstName.value.trim(),
-                        lastName: lastName.value.trim(),
+                        username: username.value.trim(),
                         email: email.value.trim(),
                         password: password.value
                     }),
