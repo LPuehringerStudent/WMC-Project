@@ -1,27 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("registrationForm");
-    const firstName = document.getElementById("inputFirstName");
-    const lastName = document.getElementById("inputLastName");
+    const form = document.getElementById("registrationForm"); // Make sure this matches the HTML id
+    const username = document.getElementById("inputUsername");
     const email = document.getElementById("inputEmail");
     const password = document.getElementById("inputPassword");
-    const passwordConfirm = document.getElementById("inputPasswordConfirm");
+    const passwordConfirm = document.getElementById("inputConfirmPassword");
 
+    // Ensure the form submit event is properly handled
     form.addEventListener("submit", async function (event) {
-        event.preventDefault();
+        event.preventDefault(); // Prevent the form from reloading the page
+
         let isValid = true;
 
         // Clear previous errors
         clearErrors();
 
-        // Validate First Name
-        if (firstName.value.trim() === "") {
-            showError(firstName, "First name is required.");
-            isValid = false;
-        }
-
-        // Validate Last Name
-        if (lastName.value.trim() === "") {
-            showError(lastName, "Last name is required.");
+        // Validate Username
+        if (username.value.trim() === "") {
+            showError(username, "Username is required.");
             isValid = false;
         }
 
@@ -45,14 +40,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (isValid) {
             try {
-                const response = await fetch('http://localhost:3000/users', {   // <-- CHANGED
+                const response = await fetch('http://localhost:3000/users', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        firstName: firstName.value.trim(),
-                        lastName: lastName.value.trim(),
+                        username: username.value.trim(),
                         email: email.value.trim(),
                         password: password.value
                     }),
@@ -62,8 +56,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     throw new Error('Failed to register user');
                 }
 
-                alert('Registration successful!');
-                window.location.href = "login.html";
+                // Successful registration, redirect to index.html
+                window.location.href = "index.html";
+
             } catch (error) {
                 showError(email, error.message || "Failed to create account. Please try again.");
                 console.error("Registration error:", error);
