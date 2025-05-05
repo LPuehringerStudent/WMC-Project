@@ -1,6 +1,13 @@
 {
   "users": [
     {
+      "id": "admin@admin",
+      "firstName": "Admin",
+      "lastName": "Admin",
+      "email": "admin",
+      "password": "admin"
+    },
+    {
       "id": "a335",
       "firstName": "Max",
       "lastName": "Mustermann",

@@ -1,0 +1,29 @@
+<script>
+    // Check if the user is logged in on page load
+    document.addEventListener("DOMContentLoaded", function() {
+        const loggedInUser = localStorage.getItem("loggedInUser");
+
+        if (loggedInUser) {
+            const user = JSON.parse(loggedInUser);
+
+            // Update the navbar with the user's name
+            document.querySelector("#navbarDropdown").innerHTML = `Hello, ${user.firstName}`;
+
+            // Show the "Logout" link and hide the "Login" link
+            document.querySelector("#loginLink").style.display = "none";
+            document.querySelector("#logoutLink").style.display = "block";
+
+            // Add event listener for logout
+            document.querySelector("#logoutLink").addEventListener("click", function() {
+                // Remove the user data from localStorage
+                localStorage.removeItem("loggedInUser");
+
+                // Redirect to the login page after logging out
+                window.location.href = "login.html";
+            });
+        } else {
+            // If the user is not logged in, redirect to the login page
+            window.location.href = "login.html";
+        }
+    });
+</script>

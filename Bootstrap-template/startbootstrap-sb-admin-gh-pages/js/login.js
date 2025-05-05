@@ -1,36 +1,35 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const loginForm = document.getElementById("loginForm");
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.querySelector("#loginForm");
 
-    loginForm.addEventListener("submit", function (event) {
-        event.preventDefault();
+    form.addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
 
-        const emailInput = document.getElementById("inputEmail").value;
-        const passwordInput = document.getElementById("inputPassword").value;
+        // Get user inputs from form
+        const email = document.querySelector("#email").value;
+        const password = document.querySelector("#password").value;
 
-        // Fetch users data from db.json
-        fetch("../DB/db.json")
-            .then(response => response.json())
-            .then(data => {
-                const users = data.users;
-                let userFound = false;
+        // Retrieve users from localStorage (or you could fetch them from a backend DB)
+        const users = JSON.parse(localStorage.getItem("users")) || [];
 
-                // Check if the entered credentials match any user in the db
-                users.forEach(user => {
-                    if (user.email === emailInput && user.password === passwordInput) {
-                        userFound = true;
-                        // Success: Redirect to index.html
-                        window.location.href = "index.html";
-                    }
-                });
+        // Validate user login
+        const user = users.find(u => u.email === email);
 
-                if (!userFound) {
-                    // Failure: Show error message
-                    alert("Invalid email or password. Please try again.");
-                }
-            })
-            .catch(error => {
-                console.error("Error fetching data: ", error);
-                alert("There was an issue with the login. Please try again later.");
-            });
+        if (!user) {
+            // Email not found in the database
+            alert("Email not registered.");
+            return;
+        }
+
+        if (user.password !== password) {
+            // Incorrect password
+            alert("Incorrect password.");
+            return;
+        }
+
+        // Successful login
+        localStorage.setItem("loggedInUser", JSON.stringify(user));
+
+        // Redirect to the dashboard or homepage
+        window.location.href = "dashboard.html";
     });
 });
