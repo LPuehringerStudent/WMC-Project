@@ -148,7 +148,9 @@
 
     <div id="layoutSidenav_content">
         <main>
-            <div class="container-fluid px-4">
+            <div class="container-fluid px-4 ">
+                <div id="mainContent">
+
                 <h1 class="mt-4">Second Grade</h1>
 
                 <!-- OOP Basics Section -->
@@ -369,6 +371,7 @@ myList.Add("World");
 Console.WriteLine(myList.Get(1)); // Output: World</code></pre>
                 </section>
             </div>
+            </div>
         </main>
     </div>
 </div>
@@ -382,6 +385,14 @@ Console.WriteLine(myList.Get(1)); // Output: World</code></pre>
         document.body.classList.toggle('text-light');
     });
 </script>
+<script>
+    searchInput?.addEventListener('input', (e) => {
+        const query = e.target.value;
+        highlightFuzzy(query);
+        scrollToFirstFuzzyMatch(query);
+    });
+</script>
+
 <script src="../../js/searchable.js"></script>
 </body>
 </html>
