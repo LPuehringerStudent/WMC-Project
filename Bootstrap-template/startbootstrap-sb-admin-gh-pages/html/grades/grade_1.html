@@ -20,6 +20,14 @@
             color: #333; /* Slightly darker text color */
         }
 
+        #clearSearch {
+            border: none;
+            background: transparent;
+            font-size: 1rem;
+            line-height: 1;
+        }
+
+
         pre {
             background-color: #f5f5f5;
             border: 1px solid #ddd;
@@ -70,8 +78,9 @@
     <a class="navbar-brand ps-3" href="../index.html">HTL Leonding Guide</a>
     <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
     <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-        <div class="input-group">
-            <input id="searchInput" class="form-control" type="text" placeholder="Search content..." aria-label="Search" />
+        <div class="input-group position-relative">
+            <input id="searchInput" class="form-control pe-5" type="text" placeholder="Search content..." aria-label="Search" />
+            <button type="button" id="clearSearch" class="btn btn-sm btn-outline-secondary position-absolute end-0 top-0 mt-1 me-1" style="z-index: 10;">✕</button>
         </div>
     </form>
     <button id="theme-toggle" class="btn btn-outline-dark ms-2">Switch to Dark Mode</button>
@@ -301,5 +310,13 @@ Console.WriteLine(s.Name + " is " + s.Age + " years old.");</code></pre>
     </div>
 </div>
 <script src="../../js/searchable.js"></script>
+<script>
+    document.getElementById("clearSearch").addEventListener("click", function () {
+        const input = document.getElementById("searchInput");
+        input.value = "";
+        input.focus();
+    });
+</script>
+
 </body>
 </html>
