@@ -11628,7 +11628,7 @@ body {
   right: 0;
   width: 90%;
   height: 100%;
-  background: url('../assets/img/backpic.jpg') no-repeat center center;
+  background: url('../assets/img/backpic2.jpg') no-repeat center center;
   background-size: cover;
   z-index: -2; /* ensure it's behind your content */
 }
@@ -11643,3 +11643,10 @@ body {
   background: rgba(0, 0, 0, 0.7); /* Much darker overlay */
   z-index: -1;
 }
+
+.blue-1 { background-color: rgba(0, 102, 204, 0.5); }
+.blue-2 { background-color: rgba(0, 153, 255, 0.5); }
+.blue-3 { background-color: rgba(51, 153, 255, 0.5); }
+.blue-4 { background-color: rgba(102, 178, 255, 0.5); }
+.blue-5 { background-color: rgba(153, 204, 255, 0.5); }
+.blue-js { background-color: rgba(0, 128, 255, 0.5); }
