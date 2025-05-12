@@ -5,26 +5,13 @@ themeToggleBtn.addEventListener('click', () => {
     document.body.classList.toggle('text-light');
 });
 
-// Fuzzy Search
+// Search Elements
 const searchInput = document.getElementById('searchInput');
+const clearSearchBtn = document.getElementById('clearSearch');
 const mainContent = document.getElementById('mainContent');
 const originalContent = mainContent.innerHTML;
-const clearSearchBtn = document.getElementById('clearSearch');
 
-function fuzzyMatch(text, query) {
-    text = text.toLowerCase();
-    query = query.toLowerCase();
-
-    // Exact match fast path
-    if (text.includes(query)) return true;
-
-    // Always calculate Levenshtein distance
-    const distance = levenshteinDistance(text, query);
-
-    // Allow up to 2 errors
-    return distance <= 2;
-}
-
+// Levenshtein Distance for fuzzy match
 function levenshteinDistance(a, b) {
     const dp = Array.from({ length: b.length + 1 }, () => new Array(a.length + 1).fill(0));
 
@@ -47,6 +34,14 @@ function levenshteinDistance(a, b) {
     return dp[b.length][a.length];
 }
 
+function fuzzyMatch(text, query) {
+    text = text.toLowerCase();
+    query = query.toLowerCase();
+
+    if (text.includes(query)) return true;
+
+    return levenshteinDistance(text, query) <= 2;
+}
 
 function highlightFuzzy(query) {
     if (!query) {
@@ -56,15 +51,16 @@ function highlightFuzzy(query) {
 
     let newContent = originalContent;
 
-    newContent = newContent.replace(/<pre><code>[\s\S]*?<\/code><\/pre>|<[^>]+>|([^<]+)/g, (match, textOnly) => {
-        if (!textOnly) return match;
+    newContent = newContent.replace(/(<[^>]+>)|([^<]+)/g, (match, tag, textOnly) => {
+        if (tag) return tag;
+
         return textOnly.replace(/\w+/g, (word) => {
-            if (fuzzyMatch(word, query)) {
-                return `<mark>${word}</mark>`;
-            }
-            return word;
+            return fuzzyMatch(word, query)
+                ? `<mark>${word}</mark>`
+                : word;
         });
     });
+
 
     mainContent.innerHTML = newContent;
 }
@@ -77,21 +73,24 @@ function scrollToFirstFuzzyMatch(query) {
     }
 }
 
+// Input Listener
 searchInput.addEventListener('input', () => {
     const query = searchInput.value.trim();
-    //comment
     highlightFuzzy(query);
 });
 
+// Enter key triggers scroll to match
 searchInput.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
         e.preventDefault();
-        const query = searchInput.value.trim();
-        scrollToFirstFuzzyMatch(query);
+        scrollToFirstFuzzyMatch(searchInput.value.trim());
     }
 });
 
-clearSearchBtn.addEventListener('click', () => {
-    searchInput.value = '';
-    highlightFuzzy('');
-});
+// Clear search
+if (clearSearchBtn) {
+    clearSearchBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        highlightFuzzy('');
+    });
+}
