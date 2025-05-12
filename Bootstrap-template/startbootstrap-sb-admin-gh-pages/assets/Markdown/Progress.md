@@ -1,6 +1,6 @@
 ﻿# 📝 Sprint Review Report
 
-**Date: 08:35**
+**Date:12.05:25** 
 
 ---
 
@@ -13,9 +13,10 @@
 - About Us Page
 ---
 
-## ⚠️ Problems We Had
+## ⚠️ Problems We Had/Have
 <!-- Describe any blockers, bugs, or unexpected challenges -->
 - Problem with making second grade searchable (for whatever reason)
+- Darkmode only changing shadow, not the whole thing
 - ...
 ---
 
