@@ -12,6 +12,11 @@
     <link href="../css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <style>
+        .section-divider {
+            margin: 30px 0;
+            height: 2px;
+            background-color: #ccc;
+        }
         body, h1, h2, h3, p {
             font-family: 'Roboto', sans-serif; /* Apply Roboto font */
             color: darkgray; /* Slightly darker text color */
@@ -92,6 +97,7 @@
     <div id="layoutSidenav_content">
         <main>
             <section id="timeline">
+                <div class="section-title"><h2>Grades</h2></div>
                 <div class="tl-item" onclick="window.location.href='grades/grade_1.html';" style="cursor: pointer;">
                     <div class="tl-bg">
                         <video class="tl-video" loop muted>
@@ -165,6 +171,10 @@
                         <h1>Mastering Programming</h1>
                         <p>Learn about the last year in school</p>
                     </div>
+                </div>
+                <div class="section-divider"></div>
+                <div class="section-title">
+                    <h2>Courses</h2>
                 </div>
 
                 <div class="tl-item" onclick="window.location.href='js-compiler.html';" style="cursor: pointer;">
