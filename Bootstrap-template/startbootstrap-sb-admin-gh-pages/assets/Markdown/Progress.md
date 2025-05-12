@@ -10,7 +10,8 @@
 - Changed Fuzzy search (making code snippets work)
 - UI of JS course made better
 - added console for JS course
-- About Us Page
+- About Us Page (Made it better)
+- Changed the design
 ---
 
 ## ⚠️ Problems We Had/Have
@@ -22,14 +23,14 @@
 
 ## 🔮 Plans Until the Next Sprint Review
 <!-- Outline your short-term goals and next focus areas -->
-- Add a delete button to search bar
+- Add a delete button to search bar 
 - Fix Light/Darkmode
-- Make Code in JS course saveable
-- Change a bit design wise
+- Make Code in JS course saveable (json server)
+- Change a bit design wise (if necessary)
 
 ---
 
 ## 📈 Commits Since Last Sprint
 **Total Commits:**
-3
+10
 ---
