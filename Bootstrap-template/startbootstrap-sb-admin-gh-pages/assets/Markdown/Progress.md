@@ -1,16 +1,17 @@
 ﻿# 📝 Sprint Review Report
 
-**Date:12.05:25** 
+**Date:19.05.25** 
 
 ---
 
 ## ✅ What We've Done
 <!-- List completed features, tasks, and milestones -->
-- Finished Login
 - Changed Fuzzy search (making code snippets work)
 - UI of JS course made better
+- CS Interpretor implementation started
 - added console for JS course
 - About Us Page (Made it better)
+- Made searchability work in other files
 - Changed the design
 ---
 
@@ -32,5 +33,5 @@
 
 ## 📈 Commits Since Last Sprint
 **Total Commits:**
-10
+21 in total
 ---
