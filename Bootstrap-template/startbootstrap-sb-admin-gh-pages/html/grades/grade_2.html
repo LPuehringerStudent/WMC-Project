@@ -102,7 +102,7 @@
         <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
             <div class="sb-sidenav-menu">
                 <div class="nav">
-                    <div class="sb-sidenav-menu-heading">Navigation</div>
+                    <div class="sb-sidenav-menu-heading">Navigation (C#)</div>
                     <a class="nav-link" href="#oop-basics">
                         <div class="sb-nav-link-icon"><i class="fas fa-code"></i></div>
                         OOP Basics
@@ -115,6 +115,19 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-layer-group"></i></div>
                         Generics
                     </a>
+
+
+                    <div class="sb-sidenav-menu-heading">Navigation (JS)</div>
+                    <a class="nav-link" href="#js-syntax">
+                        <div class="sb-nav-link-icon"><i class="fas fa-code"></i></div>
+                        JS Syntax
+                    </a>
+                    <a class="nav-link" href="#js-events">
+                        <div class="sb-nav-link-icon"><i class="fas fa-layer-group"></i></div>
+                        Events
+                    </a>
+
+
                     <div class="sb-sidenav-menu-heading">Home</div>
                     <a class="nav-link" href="../index.html">
                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
@@ -163,7 +176,7 @@
 
                 <!-- OOP Basics Section -->
                 <section id="oop-basics">
-                    <h2>OOP Basics</h2>
+                    <h2>2) OOP Basics</h2>
                     <h3>Introduction to OOP</h3>
                     <p>Object-Oriented Programming (OOP) organizes code into objects that represent real-world entities. Each object has two aspects: <strong>state</strong> (data) and <strong>behavior</strong> (methods).</p>
 
@@ -378,6 +391,134 @@ myList.Add("Hello");
 myList.Add("World");
 Console.WriteLine(myList.Get(1)); // Output: World</code></pre>
                 </section>
+
+
+
+
+
+
+
+
+
+                <!-- JavaScript Course Section -->
+                </br>
+                <section id="javascript-course">
+                    <h1>2.1) JavaScript Basics</h1>
+
+                    <section id="js-what-is">
+                        <h3>What is JavaScript?</h3>
+                        <p>JavaScript is a lightweight, interpreted programming language used to make web pages interactive. </p>
+
+                        <p>    It runs in the browser and allows developers to update content, handle user input, and create dynamic interfaces.</p>
+
+                        <p>This section introduces JavaScript and explains how it's essential for adding interactivity to websites, making static HTML come alive with dynamic features.</p>
+                    </section>
+
+                    <section id="js-syntax">
+                        <h3>JavaScript Syntax</h3>
+                        <ul>
+                            <li><strong>Variables:</strong> Declared using <code>let</code>, <code>const</code>, or <code>var</code>.</li>
+                            <li><strong>Functions:</strong> Blocks of code designed to perform a task.</li>
+                            <li><strong>Data types:</strong> String, Number, Boolean, Object, Array, Null, Undefined.</li>
+                            <li><strong>Operators:</strong> Arithmetic (<code>+ - * / %</code>), Comparison (<code>== === !=</code>), Logical (<code>&& || !</code>).</li>
+                        </ul>
+
+                        <h4>Example:</h4>
+                        <pre><code>// Declaring variables
+let name = "Alice";
+const age = 25;
+
+function greet(user) {
+    console.log("Hello, " + user + "!");
+}
+
+greet(name); // Output: Hello, Alice!
+</code></pre>
+                        <p>This section covers the foundational syntax of JavaScript, helping beginners understand how to declare variables, define functions, and use basic operators and data types.</p>
+                    </section>
+
+                    <section id="js-conditions">
+                        <h3>Conditional Statements</h3>
+                        <pre><code>let score = 85;
+
+if (score >= 90) {
+    console.log("Excellent");
+} else if (score >= 70) {
+    console.log("Good");
+} else {
+    console.log("Keep trying");
+}</code></pre>
+                        <p>This section teaches how to make decisions in code using `if`, `else if`, and `else` statements to perform different actions based on different conditions.</p>
+                    </section>
+
+                    <section id="js-loops">
+                        <h3>Loops</h3>
+                        <pre><code>// For loop
+for (let i = 0; i < 5; i++) {
+    console.log("Number: " + i);
+}
+
+// While loop
+let count = 0;
+while (count < 3) {
+    console.log("Count: " + count);
+    count++;
+}</code></pre>
+                        <p>This section explains how loops allow you to repeat actions multiple times, saving time and reducing code repetition with `for` and `while` constructs.</p>
+                    </section>
+
+                    <section id="js-arrays-objects">
+                        <h3>Arrays and Objects</h3>
+                        <pre><code>// Array
+let fruits = ["Apple", "Banana", "Cherry"];
+console.log(fruits[1]); // Output: Banana
+
+// Object
+let student = {
+    name: "Bob",
+    grade: 2,
+    enrolled: true
+};
+
+console.log(student.name); // Output: Bob</code></pre>
+                        <p>This section introduces arrays and objects, two powerful structures for storing and organizing data in JavaScript.</p>
+                    </section>
+
+                    <section id="js-dom">
+                        <h3>DOM Manipulation</h3>
+                        <pre><code>// Change content of an element with ID "title"
+document.getElementById("title").innerText = "Welcome to JavaScript!";</code></pre>
+                        <p>This section shows how JavaScript can interact with the HTML of a webpage through the Document Object Model (DOM), allowing content to be dynamically changed.</p>
+                    </section>
+
+                    <section id="js-events">
+                        <h3>Event Handling</h3>
+                        <pre><code>// Button click event
+document.getElementById("myButton").addEventListener("click", function() {
+    alert("Button was clicked!");
+});</code></pre>
+                        <p>This section demonstrates how to respond to user interactions like clicks or keystrokes using event listeners in JavaScript.</p>
+                    </section>
+
+                    <section id="js-best-practices">
+                        <h3>Best Practices</h3>
+                        <ul>
+                            <li>Use <code>const</code> and <code>let</code> instead of <code>var</code>.</li>
+                            <li>Keep your code readable and modular.</li>
+                            <li>Use semicolons for clarity.</li>
+                            <li>Comment your code.</li>
+                            <li>Avoid global variables when possible.</li>
+                        </ul>
+                        <p>This section highlights important coding practices that help maintain clean, efficient, and bug-free JavaScript code.</p>
+                    </section>
+
+                    <section id="js-try-it">
+                        <h3>Try It Yourself!</h3>
+                        <p>Use the <a href="../js-compiler.html">JS-Interpreter</a> to run and test JavaScript code interactively.</p>
+                        <p>This section encourages hands-on learning by providing a link to an interactive JavaScript interpreter where you can write and test your own code.</p>
+                    </section>
+                </section>
+
 
             </div>
         </main>
