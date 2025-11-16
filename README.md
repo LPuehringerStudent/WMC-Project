@@ -7,3 +7,5 @@
 
 
 And we obviosuly commited all of the bootstrap and the node modules ;)
+
+***THIS REPO IS NOT MAINTAINED CURRENTLY AND THERE WILL BE NO PROGRESS ANYWHERE SOON***
